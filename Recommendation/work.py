@@ -1,11 +1,9 @@
-from datetime import datetime
 from time import time
 import pandas as pd
+import matplotlib.pyplot as plt
 
-data=pd.read_csv("netflix.csv")
-data=data.rename(columns={"date_added":"Date Added","release_year":"Release Year"})
+data=pd.read_csv(r"C:\Users\user\Desktop\Projects\AI\Data\netflix.csv")
 
-# print(data['Date Added'].dtype)
-# print(data['Date Added'].head())
-data['duration']=data["duration"].astype(time)
-print(data['duration'].dtype)
+movies=data[data['type']=="Movie"].shape[0]
+# print(data['type'].unique())
+print(movies)
